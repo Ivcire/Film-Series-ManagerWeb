@@ -1,0 +1,106 @@
+.titulos{
+font-family: 'League Gothic', sans-serif;
+font-size: 200px;
+}
+
+.description{
+font-family: 'Josefin Sans', sans-serif;
+font-size: 50px
+}
+
+.arcana-nav{
+font-family: 'League Gothic', sans-serif;
+font-size: 70px
+}
+
+.arcana-link{
+font-family: 'League Gothic', sans-serif;
+font-size: 50px
+}
+
+.genre-show-card{
+font-family: 'League Gothic', sans-serif;
+font-size: 40px
+}
+
+.genre-show-card-text{
+font-size: 30px
+}
+
+form{
+margin-top: 40px;
+}
+
+.username{
+width: 250px
+}
+
+
+.arcanaTable{
+   width: 70vw
+}
+
+.block {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 300px;
+}
+
+.film_img{
+width: 300px
+height: auto
+}
+
+.contenedor {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los div hijos se distribuyan en varias líneas si no caben en una sola */
+  justify-content: center;
+}
+
+
+.container-film {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los div hijos se distribuyan en varias líneas si no caben en una sola */
+}
+
+.element {
+  width: 250px; /* Establece el ancho deseado para cada elemento */
+  margin-right: 10px; /* Agrega un margen derecho para separar los elementos */
+  margin-bottom: 50px
+}
+
+.film-stats {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se adapten a la pantalla y se envuelvan a la siguiente línea */
+}
+
+.film-element-stat {
+  width: 100%; /* Establece un ancho del 100% para que ocupe todo el ancho disponible */
+  max-width: 400px; /* Establece un ancho máximo para evitar que los elementos se vuelvan demasiado grandes en pantallas grandes */
+  height: 100px; /* Establece una altura fija */
+  margin: 10px; /* Establece un margen entre los elementos */
+  background-color: #ccc;
+}
+
+
+.size-card-text{
+height: 200px
+}
+
+.card-arcana {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #303030;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: 0.25rem;
+}
+
+.button-watch{
+margin-left: 40px;
+margin-top: 20px;
+}

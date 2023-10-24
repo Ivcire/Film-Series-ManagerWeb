@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Films</title>
+
+     <! Importo mi css>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+    <!Tema personalizado de bootstrap>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css">
+
+    <! Fuente personalizada de Google Fonts>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand arcana-nav" href="/main_page/{{user}}"><h1 class="text-light">ARCANA</h1></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active arcana-nav" aria-current="page" href="/films_page/{{user}}"><h3 class="text-warning">Films</h3></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link arcana-nav" href="/show_page/{{user}}"><h3 class="text-light">TV Series</h3></a>
+                    </li>
+                    <a class="nav-link arcana-nav" href="/profile"><h3 class="text-light">Profile</h3></a>
+                    </li>
+                </ul>
+            </div>
+            <form action="/search" class="d-flex mt-0" role="search" method="post">
+                <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-light" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <p class="arcana-nav ml-4">Genres</p>
+    <div class="container-fluid">
+        {% for x in genres: %}
+            <button type="button" class="btn btn-secondary">
+                <a class="card-text arcana-link" href="/film_genre/{{x}}">{{x}}</a>
+            </button>
+        {% endfor %}
+    </div>
+<p class="arcana-nav ml-4">Watched recently</p>
+<div class="d-flex p-2 ml-4 mr-4">
+{% for pelicula in watched_recently: %}
+    <div class="card mr-2" style="width: 18rem;">
+        <img src="{{pelicula[5]}}" class="card-img-top h-auto" alt="{{pelicula[2]}}_page">
+        <div class="card-body">
+            <a class="card-text arcana-link" href="/film/{{pelicula[0]}}">{{pelicula[2]}}</a>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% for genre in gen_selection: %}
+<p class="arcana-nav ml-4">{{genre}}</p>
+    <div class="d-flex p-2 ml-4 mr-4">
+        {% for pelicula in film_selection[genre]: %}
+        <div class="card mr-2" style="width: 18rem;">
+            <img src="{{pelicula[5]}}" class="card-img-top h-auto" alt="{{pelicula[2]}}_page">
+            <div class="card-body">
+                <a class="card-text arcana-link" href="/film/{{pelicula[0]}}">{{pelicula[2]}}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endfor %}
+</body>
+</html>

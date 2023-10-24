@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App Gestor de Películas y Series</title>
+
+    <! Importo mi css>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+    <!Tema personalizado de bootstrap>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css">
+
+    <! Fuente personalizada de Google Fonts>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="titulos text-warning">ARCANA</h1>
+    </div>
+    <hr class="border border-danger border-3 opacity-50 col-4">
+    <div class="container col-4">
+        <form action="/login" method="post">
+          <div class="mb-3">
+            <label for="validationDefaultUsername" class="form-label">Username</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                    <input type="text" name="id_user_login" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" name="password_login" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div>
+              <button type="submit" class="btn btn-success btn-lg">Log in</button>
+              <a href="/register_page" style="...">
+                  <button type="button" class="btn btn-primary btn-lg">Sign in</button>
+              </a>
+          </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
